@@ -5,8 +5,8 @@ This problem provides practice at:
   ***  FOR and WHILE loops.  ***
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Emily Dougherty.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -45,7 +45,7 @@ def main():
 def run_test_practice_problem3():
     """ Tests the   practice_problem3  function. """
     ####################################################################
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  practice_problem3  function defined below.
     #   Include at least ** 2 ** ADDITIONAL tests beyond those we wrote.
     #
@@ -109,7 +109,11 @@ def run_test_practice_problem3():
              st.SimpleTestCase(practice_problem3,
                                [0, 1, 1.414213562373],
                                [286602]),
+             st.SimpleTestCase(practice_problem3, [-2, 2, .2], [0, 1]),
+             st.SimpleTestCase(practice_problem3, [-5, 3, -.1], [-5, -4, 0])
              ]
+
+
     # 14th test:
     big_list = []
     for k in range(888, 1888):
@@ -208,7 +212,7 @@ def practice_problem3(start, n, threshold):
       :type threshold: float
     """
     ####################################################################
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #          Some tests are already written for you (above),
     #          but you are required to write ADDITIONAL tests (above).
     ####################################################################
@@ -216,6 +220,12 @@ def practice_problem3(start, n, threshold):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   < 15 minutes.
     ####################################################################
+    new_list = []
+    while len(new_list) < n:
+        if math.cos(start) + math.sin(start) > threshold:
+            new_list = new_list + [start]
+        start = start + 1
+    return new_list
 
 
 # ----------------------------------------------------------------------

@@ -5,8 +5,8 @@ This problem provides practice at:
   ***  LOOPS WITHIN LOOPS in SEQUENCES-OF-SUBSEQUENCES problems.  ***
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Emily Dougherty.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -38,7 +38,7 @@ def main():
 def run_test_integers():
     """ Tests the    integers    function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # Done: 2. Implement this TEST function.
     #   It TESTS the  integers  function defined below.
     #   Include at least ** 1 ** ADDITIONAL test beyond those we wrote.
     #
@@ -71,6 +71,19 @@ def run_test_integers():
     print('Expected is:', expected)
     print('Actual is:  ', answer)
 
+    # Test 2:
+    expected = [4, 77, 100, 3, 44, 30, -4]
+    answer = integers([(4, 'cat', 4.9),
+                       (77, 'high', 100),
+                       [],
+                       'hello',
+                       [],
+                       ['3', 3, 6.7],
+                       [[55], 44, 8.9],
+                       [30, -4]
+                       ])
+    print('Expected is:', expected)
+    print('Actual is:  ', answer)
 
 def integers(sequence_of_sequences):
     """
@@ -95,7 +108,7 @@ def integers(sequence_of_sequences):
       :rtype: list of int
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
     ####################################################################
@@ -118,7 +131,13 @@ def integers(sequence_of_sequences):
     #    DIFFICULTY:      6
     #    TIME ESTIMATE:  10 minutes.
     # ------------------------------------------------------------------
-
+    new_list = []
+    for k in range(len(sequence_of_sequences)):
+        sub_seq = sequence_of_sequences[k]
+        for j in range(len(sub_seq)):
+            if type(sub_seq[j]) is int:
+                new_list = new_list + [sub_seq[j]]
+    return new_list
 
 def run_test_big_letters():
     """ Tests the    big_letters    function. """
@@ -211,6 +230,15 @@ def big_letters(sequence_of_sequences):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:  12 minutes.
     # ------------------------------------------------------------------
+    new_string = ''
+    for k in range(len(sequence_of_sequences)):
+        sub_seq = sequence_of_sequences[k]
+        if type(sub_seq) is str:
+            for j in range(len(sub_seq)):
+                if "".isupper():
+                    new_string = new_string + (sub_seq[j])
+    return new_string
+
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
