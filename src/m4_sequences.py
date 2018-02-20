@@ -134,7 +134,7 @@ def practice_problem4a(sequence):
       :type sequence: list | tuple | string
     """
     ####################################################################
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -142,9 +142,10 @@ def practice_problem4a(sequence):
     #    TIME ESTIMATE:   15 minutes.
     ####################################################################
     new_list = []
-    for k in range(len(sequence)):
-        if sequence[k] == sequence[k - 1]:
+    for k in range(len(sequence) - 1):
+        if sequence[k] == sequence[k+1]:
             new_list = new_list + [k]
+
     return new_list
 
 def run_test_practice_problem4b():
@@ -304,7 +305,7 @@ def practice_problem4c(points):
       :rtype: rg.Point | string
     """
     ####################################################################
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     # IMPORTANT: This problem is your LOWEST PRIORITY for preparing
@@ -316,9 +317,16 @@ def practice_problem4c(points):
     #    TIME ESTIMATE:   15 minutes.
     ####################################################################
 
-    #  for k in range(len(points)):
-        #  if is_prime(points[k].x) == True:
-            #  if is_prime(points[k].y) == True:
+    for k in range(len(points)):
+        if is_prime(points[k].x) == True:
+            if is_prime(points[k].y) == True:
+                r = points[k].x
+                points[k].x = points[k].y
+                points[k].y = r
+                point = rg.Point(points[k].x, points[k].y)
+                return point
+    return 'Not found'
+
 
 
 def run_test_practice_problem4d():
@@ -411,7 +419,19 @@ def practice_problem4d(sequence):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 minutes.
     ####################################################################
+    total = 0
+    new_list = []
+    for k in range(len(sequence) - 1):
+        if sequence[k] == sequence[k+1]:
+            new_list = new_list
+        else:
+            new_list = new_list + [sequence[k]]
 
+    for k in range(len(new_list)):
+        if is_prime(new_list[k]) == True:
+            print(new_list[k])
+            total = total + sequence[k]
+    return total
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.

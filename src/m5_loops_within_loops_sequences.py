@@ -178,6 +178,28 @@ def run_test_big_letters():
     print('Expected is:', expected)
     print('Actual is:  ', answer)
 
+    # Test 2:
+    expected = 'CATASTROABOSCD'
+    answer = big_letters([(0, 7),  # not a string
+                          (8, 'BLAH'),  # not a string
+                          'CATS Are great',  # CATAS
+                          [],  # not a string
+                          ['Troop ROmp'],  # TRO
+                          'oops',  # no capitals
+                          ['OOPS'],  # not a string
+                          '1 2 opps !',  # no captials
+                          'A',  # A
+                          'oops $$&*#%&&',  # nope
+                          'B',  # B
+                          'oOpS',  # OS
+                          'C',  # C
+                          [1, 0, 4],  # nope
+                          'Z',  # D
+                          '12 ps'  # nope
+                          ])
+    print('Expected is:', expected)
+    print('Actual is:  ', answer)
+
 
 def big_letters(sequence_of_sequences):
     """
