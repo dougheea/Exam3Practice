@@ -412,7 +412,7 @@ def practice_problem4d(sequence):
       :rtype: int
     """
     ####################################################################
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -420,17 +420,12 @@ def practice_problem4d(sequence):
     #    TIME ESTIMATE:   15 minutes.
     ####################################################################
     total = 0
-    new_list = []
     for k in range(len(sequence) - 1):
-        if sequence[k] == sequence[k+1]:
-            new_list = new_list
-        else:
-            new_list = new_list + [sequence[k]]
+        if is_prime(sequence[k]) == True:
+            if not sequence[k] == sequence[k + 1]:
+                if is_prime(sequence[k + 1]) == True:
+                    total = total + sequence[k]
 
-    for k in range(len(new_list)):
-        if is_prime(new_list[k]) == True:
-            print(new_list[k])
-            total = total + sequence[k]
     return total
 
 # ----------------------------------------------------------------------

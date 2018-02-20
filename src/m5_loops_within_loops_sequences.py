@@ -142,7 +142,7 @@ def integers(sequence_of_sequences):
 def run_test_big_letters():
     """ Tests the    big_letters    function. """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement this TEST function.
+    # Done: 4. Implement this TEST function.
     #   It TESTS the  big_letters  function defined below.
     #   Include at least ** 1 ** ADDITIONAL test beyond those we wrote.
     # ------------------------------------------------------------------
@@ -179,12 +179,12 @@ def run_test_big_letters():
     print('Actual is:  ', answer)
 
     # Test 2:
-    expected = 'CATASTROABOSCD'
+    expected = 'CATSATROABOSCD'
     answer = big_letters([(0, 7),  # not a string
                           (8, 'BLAH'),  # not a string
                           'CATS Are great',  # CATAS
                           [],  # not a string
-                          ['Troop ROmp'],  # TRO
+                          'Troop ROmp',  # TRO
                           'oops',  # no capitals
                           ['OOPS'],  # not a string
                           '1 2 opps !',  # no captials
@@ -194,7 +194,7 @@ def run_test_big_letters():
                           'oOpS',  # OS
                           'C',  # C
                           [1, 0, 4],  # nope
-                          'Z',  # D
+                          'D',  # D
                           '12 ps'  # nope
                           ])
     print('Expected is:', expected)
@@ -230,7 +230,7 @@ def big_letters(sequence_of_sequences):
     Precondition:  the given argument is a sequence of sequences.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
     ####################################################################
@@ -257,7 +257,7 @@ def big_letters(sequence_of_sequences):
         sub_seq = sequence_of_sequences[k]
         if type(sub_seq) is str:
             for j in range(len(sub_seq)):
-                if "".isupper():
+                if sub_seq[j].isupper():
                     new_string = new_string + (sub_seq[j])
     return new_string
 
